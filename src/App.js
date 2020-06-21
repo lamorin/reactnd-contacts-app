@@ -9,7 +9,7 @@ class App extends Component {
     getAll().then((contacts) => this.setState({ contacts: contacts }));
   }
 
-  removeHandler = (contact) => {
+  removeContact = (contact) => {
     remove(contact).then(() =>
       getAll().then((contacts) => this.setState({ contacts: contacts }))
     );
@@ -20,7 +20,7 @@ class App extends Component {
       <div>
         <ListContacts
           contacts={this.state.contacts}
-          remove={this.removeHandler}
+          removeContactHandler={this.removeContact}
         />
       </div>
     );
